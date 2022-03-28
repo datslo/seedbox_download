@@ -14,6 +14,7 @@ location = credentials['seedbox']['dl_location']
 ssh = SSHClient()
 ssh.load_system_host_keys()
 ssh.connect(host, username=username, password=password)
+scp = SCPClient(ssh.get_transport())
 
 files = []
 
